@@ -13,7 +13,7 @@ var twoSum = function (nums, target) {
         remove: function (key) { delete this[key] }
     };
 
-    for (var i = 0; i < nums.length; i++) {
+    for (var i = 0; i < nums.length; i++) {//使用hashMap，不相等是数字存入到hashMap中，这样一直循环到数组末尾就可以找到相等的数字。
         var complement = target - nums[i];
         if (hashMap.containsKey(complement)) {
             return new Array(hashMap.get(complement), i);

@@ -20,7 +20,7 @@ var convert = function (s, numRows) {
     function strAdd(m) {
         var strRows = '';
         if (!s.charAt(m)) return strRows;
-        if (m == 0) {
+        if (m == 0) {//计算第一层
             for (var j = 0; j < goal; j++) {
                 strRows += s.charAt(rate * j);
             }
@@ -28,7 +28,7 @@ var convert = function (s, numRows) {
                 strRows += s.charAt(rate * goal + 0);
             }
 
-        } else if (m == (numRows - 1)) {
+        } else if (m == (numRows - 1)) {//计算最后一层
             for (var x = 0; x < goal; x++) {
                 strRows += s.charAt(rate * x + numRows - 1);
             }
@@ -36,7 +36,7 @@ var convert = function (s, numRows) {
                 strRows += s.charAt(rate * goal + numRows - 1);
             }
         } else {
-            for (var z = 0; z < goal; z++) {
+            for (var z = 0; z < goal; z++) {//计算中间层
                 strRows += s.charAt(rate * z + m) + s.charAt(rate * z + rate - m);
             }
             if (remainder > 0 && remainder <= numRows) {

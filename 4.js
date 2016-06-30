@@ -6,6 +6,10 @@
  * @param {number[]} nums2
  * @return {number}
  */
+//使用二分查找，原理是如果a数组的中位数大于b数组的中位数，
+//如果此时的a中位数左边加上b中位数左边数目之和大于合并之和的中位数左边数字之和，
+//那么此时中位数落在a的左半部和b之中，相应的递归即可得到中位数。
+//要对两个数组之和的数目作奇偶数讨论。
 var findMedianSortedArrays = function (nums1, nums2) {
     var median = -1;
     var lengtha = nums1.length;

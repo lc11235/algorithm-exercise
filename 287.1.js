@@ -7,6 +7,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+//其实这个是不符合要求的，因为使用了大于O(1)的空间
 var findDuplicate = function(nums) {
     var hashMap = {
         set:function(key,value){this[key] = value},
