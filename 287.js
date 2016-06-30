@@ -13,7 +13,8 @@ var findDuplicate = function(nums) {
         get:function(key){return this[key]},
         containsKey:function(key){return this.get(key) == null ? false:true},
         remove:function(key){delete this[key]}
-    }
+    };
+
     var len = nums.length;
     for(var i=0; i<len; i++){
         var temp =0;
@@ -21,13 +22,5 @@ var findDuplicate = function(nums) {
             return nums[i];
         }
         hashMap.set(nums[i],i);
-    }
-};
-
-var findDuplicate = function (nums) {
-    var len = nums.length;
-    var temp = -1;
-    for(var i=0; i<len;i++){
-        
     }
 };

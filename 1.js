@@ -11,7 +11,7 @@ var twoSum = function (nums, target) {
         get: function (key) { return this[key] },
         containsKey: function (key) { return this.get(key) == null ? false : true },
         remove: function (key) { delete this[key] }
-    }
+    };
 
     for (var i = 0; i < nums.length; i++) {
         var complement = target - nums[i];
