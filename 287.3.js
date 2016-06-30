@@ -16,13 +16,13 @@ var findDuplicate = function (nums) {
     var slow = 0;//js中没有指针，因此就用数组的引用关系来代替，此为慢指针
     var fast = 0;//此为快指针
 
-    do{
+    do {
         slow = nums[slow];
         fast = nums[nums[fast]];
-    } while(nums[slow] != nums[fast]);//循环到相遇为止
+    } while (nums[slow] != nums[fast]);//循环到相遇为止
 
     var restart = 0;
-    while (nums[restart] != nums[slow]){//参考快慢指针.md里面的解释
+    while (nums[restart] != nums[slow]) {//参考快慢指针.md里面的解释
         restart = nums[restart];
         slow = nums[slow];
     }

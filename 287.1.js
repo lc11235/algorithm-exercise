@@ -8,20 +8,20 @@
  * @return {number}
  */
 //其实这个是不符合要求的，因为使用了大于O(1)的空间
-var findDuplicate = function(nums) {
+var findDuplicate = function (nums) {
     var hashMap = {
-        set:function(key,value){this[key] = value},
-        get:function(key){return this[key]},
-        containsKey:function(key){return this.get(key) == null ? false:true},
-        remove:function(key){delete this[key]}
+        set: function (key, value) { this[key] = value },
+        get: function (key) { return this[key] },
+        containsKey: function (key) { return this.get(key) == null ? false : true },
+        remove: function (key) { delete this[key] }
     };
 
     var len = nums.length;
-    for(var i=0; i<len; i++){
-        var temp =0;
-        if(hashMap.containsKey(nums[i])){
+    for (var i = 0; i < len; i++) {
+        var temp = 0;
+        if (hashMap.containsKey(nums[i])) {
             return nums[i];
         }
-        hashMap.set(nums[i],i);
+        hashMap.set(nums[i], i);
     }
 };
