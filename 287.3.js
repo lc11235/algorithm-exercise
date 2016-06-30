@@ -12,3 +12,19 @@
 //这样问题就转变成了寻找有闭环的链表的第一个闭环的入口（即重复的数字）
 //使用快慢指针法，可以在O(n)的时间内使用O(1)空间来寻找到这个重复的数字
 //
+var findDuplicate = function (nums) {
+    var slow = 0;//js中没有指针，因此就用数组的引用关系来代替，此为慢指针
+    var fast = 0;//此为快指针
+
+    do{
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while(nums[slow] != nums[fast]);//循环到相遇为止
+
+    var restart = 0;
+    while (nums[restart] != nums[slow]){//参考快慢指针.md里面的解释
+        restart = nums[restart];
+        slow = nums[slow];
+    }
+    return nums[restart];
+}
