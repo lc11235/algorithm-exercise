@@ -5,24 +5,24 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
+var reverse = function (x) {
     const max = 0x7fffffff;
     const min = -0x80000000;
     var sum = 0;
-    while(x != 0){
-        var temp = x%10;
-        sum = sum * 10 +temp;
+    while (x != 0) {
+        var temp = x % 10;
+        sum = sum * 10 + temp;
 
-        if(sum > max || sum <min){
-            sum = sum >0? max : min;
+        if (sum > max || sum < min) {
+            sum = sum > 0 ? max : min;
             return 0;
         }
-        if(x>0){
-            x= Math.floor(x/10);
-        } else if(x<0){
-            x= Math.ceil(x/10);
+        if (x > 0) {
+            x = Math.floor(x / 10);
+        } else if (x < 0) {
+            x = Math.ceil(x / 10);
         }
-        
+
     }
     return sum;
 };
